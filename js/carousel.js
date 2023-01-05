@@ -1,16 +1,17 @@
 function Carousel(config) {
     
+    
     this.container = (typeof config.container === 'string') ? 
     document.querySelector(config.container) : config.container;
     
     this.itens = (typeof config.itens === 'string') ? 
-    document.querySelector(config.itens) : config.itens;
+    this.container.querySelectorAll(config.itens) : config.itens;
     
     this.btnPrev = (typeof config.btnPrev === 'string') ? 
-    document.querySelector(config.btnPrev) : config.btnPrev;
+    this.container.querySelector(config.btnPrev) : config.btnPrev;
     
     this.btnNext = (typeof config.btnNext === 'string') ? 
-    document.querySelector(config.btnNext) : config.btnNext;
+    this.container.querySelector(config.btnNext) : config.btnNext;
 
  
 
@@ -39,8 +40,8 @@ function Carousel(config) {
     }
 
     function showNextSlide() {
-        _currentSlide++
-        showSlide()
+        _currentSlide++;
+        showSlide();
     }
 
     function showPrevSlide(){
@@ -49,12 +50,15 @@ function Carousel(config) {
     }
 
     function showSlide(){
-        var qtd = _this.itens.lenght;
+        var qtd = _this.itens.length;
         var slide = _currentSlide % qtd;
+
         slide = Math.abs(slide);
 
         _this.container.querySelector('.show').classList.remove('show');
+
         _this.itens[slide].classList.add('show');
+
     }
 
 }

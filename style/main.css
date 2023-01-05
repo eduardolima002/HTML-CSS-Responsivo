@@ -24,6 +24,7 @@ img{
 .js .header{
     position:fixed;
     width: 100%;
+    z-index: 10;
 }
 
 .logo-text{
@@ -46,6 +47,47 @@ img{
 
 .js .header__nav{
     transition: max-height 1s;
+}
+
+.js .laptop-slider{
+    overflow: hidden;
+    color: white;
+}
+
+.js .laptop-slider .slideshow{
+    position: relative;
+    width: 100%;
+    margin: auto;
+    max-width: 950px;
+}
+
+.js .laptop-slider .slideshow figure{
+    opacity: 0;
+    transition: 1s opacity;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.js .laptop-slider .slideshow figure.show{
+    opacity: 1;
+    position: static;
+}
+
+.js .laptop-slider .prev,.js .laptop-slider .next{
+    z-index: 3;
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
+}
+
+.js .laptop-slider .prev{
+    left: 10px;
+}
+
+.js .laptop-slider .next{
+    right: 9px;
 }
 
 .header__nav ul{
@@ -234,6 +276,43 @@ img{
     background-color: #63c6ae;
     padding:50px 0;
     border-bottom: 12px solid #48b9a1;
+}
+
+.js .quote-container{
+    position: relative;
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.js .quote-container figure{
+    opacity: 0;
+    width: 80%;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.js .quote-container figure.show{
+    transition: 0.8s opacity;
+    opacity: 1;
+    position: static;
+}
+
+.js .quote-container .next,.js .quote-container .prev{
+    font-size: 1.6em;
+    position: absolute;
+    top: 40%;
+    color: white;
+}
+
+.js .quote-container .next{
+    right: 1px;
+}
+
+.js .quote-container .prev{
+    left: 1px;
 }
 
 .quote-slideshow h2{
